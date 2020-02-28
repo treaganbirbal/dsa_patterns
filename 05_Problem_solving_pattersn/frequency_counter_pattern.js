@@ -28,8 +28,8 @@ function same(array1, array2){
     for(let values of array2){
         arr2Map[values] = (arr2Map[values] || 0) + 1;
     }
-    console.log(arr1Map)
-    console.log(arr2Map)
+    // console.log(arr1Map)
+    // console.log(arr2Map)
     for(let key in arr1Map ){
         if(!(key ** 2 in arr2Map)){
             return false;
