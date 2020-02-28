@@ -16,34 +16,34 @@
 
 //---------o(n)
 
-function same(array1, array2){
-    if(array1.length !== array2.length){
-        return false;
-    }
-    let arr1Map = {};
-    let arr2Map = {};
-    for(let values of array1){
-        arr1Map[values] = (arr1Map[values] || 0) + 1;
-    }
-    for(let values of array2){
-        arr2Map[values] = (arr2Map[values] || 0) + 1;
-    }
-    // console.log(arr1Map)
-    // console.log(arr2Map)
-    for(let key in arr1Map ){
-        if(!(key ** 2 in arr2Map)){
-            return false;
-        }
-        if(arr2Map[key ** 2] !== arr1Map[key]){
-            return false
-        }
-    }
-    return true;
-}
+// function same(array1, array2){
+//     if(array1.length !== array2.length){
+//         return false;
+//     }
+//     let arr1Map = {};
+//     let arr2Map = {};
+//     for(let values of array1){
+//         arr1Map[values] = (arr1Map[values] || 0) + 1;
+//     }
+//     for(let values of array2){
+//         arr2Map[values] = (arr2Map[values] || 0) + 1;
+//     }
+//     // console.log(arr1Map)
+//     // console.log(arr2Map)
+//     for(let key in arr1Map ){
+//         if(!(key ** 2 in arr2Map)){
+//             return false;
+//         }
+//         if(arr2Map[key ** 2] !== arr1Map[key]){
+//             return false
+//         }
+//     }
+//     return true;
+// }
 
-let arr1 = [2, 2, 3, 4]
-let arr2 = [4, 9, 4, 16]
-let arr3 = [1, 4, 5, 16]
-let arr4 = [4, 4, 9, 16, 17];
+// let arr1 = [2, 2, 3, 4]
+// let arr2 = [4, 9, 4, 16]
+// let arr3 = [1, 4, 5, 16]
+// let arr4 = [4, 4, 9, 16, 17];
 
-console.log(same(arr1, arr3));
+// console.log(same(arr1, arr3));
