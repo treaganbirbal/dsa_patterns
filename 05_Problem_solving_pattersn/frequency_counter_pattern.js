@@ -48,6 +48,8 @@
 
 // console.log(same(arr1, arr3));
 
+//Given two strings, write a function, validAnagram, to determine if the second string is an anagram of the first.  An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema & iceman.
+
 const validAnagram = (str1, str2) => {
     return true;
 }
