@@ -47,3 +47,7 @@
 // let arr4 = [4, 4, 9, 16, 17];
 
 // console.log(same(arr1, arr3));
+
+const validAnagram = (str1, str2) => {
+    return true;
+}
