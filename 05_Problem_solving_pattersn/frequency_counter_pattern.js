@@ -46,4 +46,4 @@ let arr2 = [4, 9, 4, 16]
 let arr3 = [1, 4, 5, 16]
 let arr4 = [4, 4, 9, 16, 17];
 
-console.log(same(arr1, arr2));
+console.log(same(arr1, arr3));
