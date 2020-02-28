@@ -54,7 +54,17 @@ const validAnagram = (str1, str2) => {
     if(str1.length !== str2.length){
         return false
     }
-    return true;
+    let str = ''
+    for(let i = 0; i < str1.length; i++){
+        if(str2.includes(str1[i])){
+            str += str2;
+            console.log(str1[i])
+            if(str === str2){
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 let firstStr = 'iceman';
@@ -62,4 +72,4 @@ let secondStr = 'cinema';
 let thirdStr = 'niceman';
 let forthStr = 'icefan';
 
-console.log(validAnagram(firstStr, thirdStr));
+console.log(validAnagram(firstStr, forthStr));
