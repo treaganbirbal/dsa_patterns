@@ -53,3 +53,10 @@
 const validAnagram = (str1, str2) => {
     return true;
 }
+
+let firstStr = 'iceman';
+let secondStr = 'cinema';
+let thirdStr = 'niceman';
+let forthStr = 'icefan';
+
+console.log(validAnagram(firstStr, secondStr));
