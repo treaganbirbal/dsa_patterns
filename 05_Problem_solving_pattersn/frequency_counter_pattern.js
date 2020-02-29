@@ -50,26 +50,34 @@
 
 //Given two strings, write a function, validAnagram, to determine if the second string is an anagram of the first.  An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema & iceman.
 
-const validAnagram = (str1, str2) => {
-    if(str1.length !== str2.length){
-        return false
-    }
-    let str = ''
-    for(let i = 0; i < str1.length; i++){
-        if(str2.includes(str1[i])){
-            str += str2;
-            console.log(str1[i])
-            if(str === str2){
-                return true;
-            }
-        }
-    }
-    return false;
-}
+//----naive approach
 
-let firstStr = 'iceman';
-let secondStr = 'cinema';
+// const validAnagram = (str1, str2) => {
+//     if(str1.length !== str2.length){
+//         return false
+//     }
+//      const str1Map = {};
+//      const str2Map = {};
+//      for(let values of str1){
+//          str1Map[values] = (str1Map[values] || 0)+1
+//      }
+//      for(let values of str2){
+//          str2Map[values] = (str2Map[values] || 0)+1
+//      }
+//      console.log(str1Map, str2Map)
+//      for(let keys in str1Map){
+//      if(str1Map[keys] === str2Map[keys]){
+//         return true;
+//      } else {
+//          return false;
+//      }
+//     }
+    
+// }
+
+let firstStr = 'icemannnn';
+let secondStr = 'cinnnnema';
 let thirdStr = 'niceman';
 let forthStr = 'icefan';
 
-console.log(validAnagram(firstStr, forthStr));
+console.log(validAnagram(firstStr, secondStr));
