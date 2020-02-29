@@ -76,9 +76,29 @@
 
 //---more effecient solution----
 
-const validAnagram(str1, str2) => {
+const validAnagram = (str1, str2) => {
+    //if the the strings are different length...
     if(str1.length !== str2.length){
+        //...return false
         return false;
+    }
+    //create an object to store letters and num of occurances
+    const lookup = {};
+    //loop thru a str to build out lookup object
+    for(let i = 0; i < str1.length; i++){
+        let letter = str1[i];
+         //if letter exists, increment; otherwise set to 1.
+         lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
+    }
+    //loop thru the other str to check if letters exist in obj
+    for(let i = 0; i < str2.length; i++){
+        let letter = str2[i];
+        //cannot find letter or letter is 0 than its not an anagram
+        if(!lookup[letter]){
+            return false
+        } else {
+            lookup[letter]-= 1;
+        }
     }
     return true;
 }
