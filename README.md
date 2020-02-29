@@ -1,1 +1,1 @@
-# udemy_dsa
+# dsa_patterns
