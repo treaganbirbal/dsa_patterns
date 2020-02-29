@@ -72,7 +72,6 @@
 //          return false;
 //      }
 //     }
-    
 // }
 
 let firstStr = 'icemannnn';
