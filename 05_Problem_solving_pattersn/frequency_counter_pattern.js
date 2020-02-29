@@ -74,7 +74,14 @@
 //     }
 // }
 
+//---more effecient solution----
 
+const validAnagram(str1, str2) => {
+    if(str1.length !== str2.length){
+        return false;
+    }
+    return true;
+}
 
 let firstStr = 'icemannnn';
 let secondStr = 'cinnnnema';
