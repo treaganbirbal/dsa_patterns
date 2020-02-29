@@ -108,4 +108,4 @@ let secondStr = 'cinnnnema';
 let thirdStr = 'niceman';
 let forthStr = 'icefan';
 
-console.log(validAnagram(firstStr, secondStr));
+console.log(validAnagram(forthStr, thirdStr));
