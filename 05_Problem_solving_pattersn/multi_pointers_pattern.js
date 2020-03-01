@@ -45,7 +45,9 @@
 //Implement a function call countUnqiueValues, which accepts a sorted Array, and counts the unique values in the array.  Tere can be negative numbers in the array, but it will alway be sorted.
 
 function countUnqiueValues(arr){
-    return ;
+    if(!arr.length){
+        return 0;
+    }
 }
 
 let arr1 = [1,1,1,1,1,1,2];
