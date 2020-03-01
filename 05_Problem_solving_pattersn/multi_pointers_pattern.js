@@ -44,3 +44,16 @@
 
 //Implement a function call countUnqiueValues, which accepts a sorted Array, and counts the unique values in the array.  Tere can be negative numbers in the array, but it will alway be sorted.
 
+function countUnqiueValues(arr){
+    return ;
+}
+
+let arr1 = [1,1,1,1,1,1,2];
+let arr2 = [1,2,3,4,4,4,5,5,12,12,13];
+let arr3 = [];
+let arr4 = [-2, -1, -1, 0, 1];
+
+console.log(countUnqiueValues(arr1))
+console.log(countUnqiueValues(arr2))
+console.log(countUnqiueValues(arr3))
+console.log(countUnqiueValues(arr4))
