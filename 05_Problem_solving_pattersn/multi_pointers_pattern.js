@@ -7,3 +7,7 @@ function sumZero(arr){
 const arr1 = [-3, -3, -2, -1, 0] //=> [-3, -3]
 const arr2 = [3,2,-2,-3] // => [2, -2]
 const arr3 = [2, 3, 5, -4] // => undefined
+
+console.log(sumZero(arr1));
+console.log(sumZero(arr2));
+console.elog(sumZero(arr3));
