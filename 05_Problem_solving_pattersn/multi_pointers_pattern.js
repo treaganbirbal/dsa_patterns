@@ -4,20 +4,17 @@ function sumZero(arr){
     if(!arr.length){
         return undefined;
     }
-    let output = [];
     for(let i = 0; i < arr.length; i++){
-        let pointer1 = arr[i];
-        let pointer2 = arr[i+1];
-      if(pointer1 + pointer2 === 0){
-          output.push(pointer1, pointer2)
-          return output
-      }
+        for(let j = i+1; j < arr.length; j++){
+            if(arr[i] + arr[j] === 0){
+                return [arr[i], arr[j]]
+            }
+        }
     }
-    return undefined;
 }
 
 const arr1 = [-3, 3, -2, -1, 0] //=> [-3, 3]
-const arr2 = [-3, -2. -1 , 0, 1, 2, 4] // => [-1, 1]
+const arr2 = [-3, -1 , 0, 1, 2, 4] // => [-1, 1]
 const arr3 = [-4, -3, -2, -1, 0, 1, 2, 5] // => [-2, 2]
 
 console.log(sumZero(arr1));
