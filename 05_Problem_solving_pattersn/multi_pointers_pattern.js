@@ -8,7 +8,10 @@ function sumZero(arr){
     for(let i = 0; i < arr.length; i++){
         let pointer1 = arr[i];
         let pointer2 = arr[i+1];
-        console.log(pointer1 + pointer2)
+      if(pointer1 + pointer2 === 0){
+          output.push(pointer1, pointer2)
+          return output
+      }
     }
     return undefined;
 }
