@@ -114,10 +114,13 @@
 //Your solution MUST have the following complexities: time: O(n)
 
 function sameFrequency(int1, int2){
-    return;
+    if(int1.toString().length !== int2.toString().length){
+        return false;
+    }
+    return true;
 }
 
-// console.log(sameFrequency(182, 281)) // => true;
+console.log(sameFrequency(182, 281)) // => true;
 // console.log(sameFrequency(34, 14)) // => false;
 // console.log(sameFrequency(3589578, 5879385)) // => true;
 // console.log(sameFrequency(22, 222)) // => false;
