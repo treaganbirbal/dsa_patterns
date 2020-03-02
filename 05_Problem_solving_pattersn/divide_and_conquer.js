@@ -6,4 +6,6 @@ const search = (arr) => {
 
 let arr1 = [1,2,3,4,5,6];
 
-// console.log(search(arr1, 4)) // => 3
+console.log(search(arr1, 4)) // => 3
+console.log(search(arr1, 6)) // => 5
+console.log(search(arr1, 10)) // => -1
