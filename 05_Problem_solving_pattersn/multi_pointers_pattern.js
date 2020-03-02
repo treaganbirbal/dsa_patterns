@@ -48,12 +48,14 @@ function countUnqiueValues(arr){
     if(!arr.length){
         return 0;
     }
-    let count = 0;
-    let uniqueInt = 0;
-    let endOfArr = arr.length - 1
-    while(uniqueInt <= endOfArr){
-        console.log(arr)
+    let i = 0; 
+    for(let j = 1; j < arr.length; j++){
+        if(arr[i] !== arr[j]){
+            i++;
+            arr[i] = arr[j];
+        }
     }
+    return i+1
 }
 
 let arr1 = [1,1,1,1,1,1,2];
