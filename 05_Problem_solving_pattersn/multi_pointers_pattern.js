@@ -132,3 +132,8 @@
 function isSubsequence(str1, str2){
     return;
 }
+
+console.log(isSubsequence('hello', 'hello world')) // => true;
+console.log(isSubsequence('sing', 'sting')) // => true;
+console.log(isSubsequence('abc', 'abracadabra')) // => true;
+console.log(isSubsequence('abc', 'acb')) // => false;
