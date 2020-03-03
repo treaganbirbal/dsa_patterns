@@ -95,3 +95,14 @@
 
 //Write a function called averagePair.  Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average.  There may be more than one pair that mathces the average target.
 //constraints: time-O(n), space-O(1)
+
+let arr1 = [1,2,3];
+let arr2 = [1,3,3,5,6,7,10,12,19]
+let arr3 = [-1, 0, 3, 4, 5, 6];
+let arr4 = [];
+
+console.log(averagePair(arr1, 2.5)) // => true;
+console.log(averagePair(arr2, 8)) // => true;
+console.log(averagePair(arr3, 4.1)) // => false;
+console.log(averagePair(arr1, 4)) // => false;
+
