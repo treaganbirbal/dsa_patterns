@@ -70,25 +70,28 @@
 
 // Implement a function called areThereDuplicates, which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. 
 
-function areThereDuplicates(...args){
-    args.sort()
-    let start = 0;
-    let next = 1;
-    while(next < args.length){
-        if(args[start] === args[next]){
-            return true;
-        }
-        start++
-        next++
-    }
-    return false;
-}
+// function areThereDuplicates(...args){
+//     args.sort()
+//     let start = 0;
+//     let next = 1;
+//     while(next < args.length){
+//         if(args[start] === args[next]){
+//             return true;
+//         }
+//         start++
+//         next++
+//     }
+//     return false;
+// }
 
 // function areThereDuplicates() {
 //     return new Set(arguments).size !== arguments.length;
 //   }
   
 
-console.log(areThereDuplicates(1, 2, 3)) //=> false;
-console.log(areThereDuplicates(1, 2, 2)) //=> true;
-console.log(areThereDuplicates('a', 'b', 'c', 'a')) // => true;
+// console.log(areThereDuplicates(1, 2, 3)) //=> false;
+// console.log(areThereDuplicates(1, 2, 2)) //=> true;
+// console.log(areThereDuplicates('a', 'b', 'c', 'a')) // => true;
+
+//Write a function called averagePair.  Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average.  There may be more than one pair that mathces the average target.
+//constraints: time-O(n), space-O(1)
