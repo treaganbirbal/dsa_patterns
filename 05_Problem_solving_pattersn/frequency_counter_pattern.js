@@ -110,17 +110,34 @@
 
 // console.log(validAnagram(forthStr, thirdStr));
 
-//Write a function called sameFrequencty. Given tow positive integers, find out if the two numbers have the same frequency of digits.  
+//Write a function called sameFrequencty. Given two positive integers, find out if the two numbers have the same frequency of digits.  
 //Your solution MUST have the following complexities: time: O(n)
 
 function sameFrequency(int1, int2){
-    if(int1.toString().length !== int2.toString().length){
+    let int1Str = int1.toString()
+    let int2Str = int2.toString();
+    if(int1Str.length !== int2Str.length){
         return false;
     }
-    return true;
+    const frequencyOfInt1 = {};
+    for(let char of int1Str){
+        frequencyOfInt1[char] = (frequencyOfInt1[char] || 0) + 1
+    }
+    const frequencyOfInt2 = {};
+    for(let char of int2Str){
+        frequencyOfInt2[char] = (frequencyOfInt2[char] || 0) + 1
+    }
+    // console.log(frequencyOfInt1, frequencyOfInt2)
+    for(let keys in frequencyOfInt1){
+        if(frequencyOfInt1[keys] === frequencyOfInt2[keys]){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 console.log(sameFrequency(182, 281)) // => true;
-// console.log(sameFrequency(34, 14)) // => false;
-// console.log(sameFrequency(3589578, 5879385)) // => true;
-// console.log(sameFrequency(22, 222)) // => false;
+console.log(sameFrequency(34, 14)) // => false;
+console.log(sameFrequency(3589578, 5879385)) // => true;
+console.log(sameFrequency(22, 222)) // => false;
