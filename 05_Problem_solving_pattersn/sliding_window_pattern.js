@@ -57,3 +57,9 @@ let arr2 = [1, 4, 2, 10, 23, 3, 1, 0, 20];
 let arr3 = [-3, 4, 0, -2, 6, -1];
 let arr4 = [3, -2, 7, -4, 1, -1, 4, -2, 1]
 let arr5 = [2, 3];
+
+console.log(maxSubarraySum(arr1, 2)) //=> 700;
+console.log(maxSubarraySum(arr2, 4)) //=> 39;
+console.log(maxSubarraySum(arr3, 2)) //=> 5;
+console.log(maxSubarraySum(arr4, 2)) //=> 5;
+console.log(maxSubarraySum(arr5, 3)) //=> null;
