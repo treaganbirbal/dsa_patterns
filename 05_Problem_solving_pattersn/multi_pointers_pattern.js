@@ -96,33 +96,35 @@
 //Write a function called averagePair.  Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average.  There may be more than one pair that mathces the average target.
 //constraints: time-O(n), space-O(1)
 
-function averagePair(arr, target){
-    if(arr.length < target){
-        return false;
-    }
-    let sum = 0;
-    let start = 0; 
-    let end = arr.length - 1;
-    while(start < end){
-        let average = (arr[start] + arr[end])/2;
-        if(average === target){
-            return true;
-        }
-        else if(average < target){
-            start++
-        } else {
-            end--
-        }
-    }
-    return false;
-}
-let arr1 = [1,2,3];
-let arr2 = [1,3,3,5,6,7,10,12,19]
-let arr3 = [-1, 0, 3, 4, 5, 6];
-let arr4 = [];
+// function averagePair(arr, target){
+//     if(arr.length < target){
+//         return false;
+//     }
+//     let sum = 0;
+//     let start = 0; 
+//     let end = arr.length - 1;
+//     while(start < end){
+//         let average = (arr[start] + arr[end])/2;
+//         if(average === target){
+//             return true;
+//         }
+//         else if(average < target){
+//             start++
+//         } else {
+//             end--
+//         }
+//     }
+//     return false;
+// }
+// let arr1 = [1,2,3];
+// let arr2 = [1,3,3,5,6,7,10,12,19]
+// let arr3 = [-1, 0, 3, 4, 5, 6];
+// let arr4 = [];
 
-console.log(averagePair(arr1, 2.5)) // => true;
-console.log(averagePair(arr2, 8)) // => true;
-console.log(averagePair(arr3, 4.1)) // => false;
-console.log(averagePair(arr1, 4)) // => false;
+// console.log(averagePair(arr1, 2.5)) // => true;
+// console.log(averagePair(arr2, 8)) // => true;
+// console.log(averagePair(arr3, 4.1)) // => false;
+// console.log(averagePair(arr1, 4)) // => false;
 
+
+//Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. In other words, the function should check whether the character in the first string appears somewhere in the second sring, without their order changing.
