@@ -85,7 +85,15 @@ const minSubArrayLen = (arr, num) => {
 
 let arr1 = [2, 3, 1, 2, 4, 4]
 let arr2 = [2, 1, 6, 5, 4]
-let arr3 = [3,1,6,11,2,9,8,21,62,33,19]
+let arr3 = [3,1,7,11,2,9,8,21,62,33,19]
 let arr4 = [1,4,16,2,,5,6,7,8,10]
 let arr5 = [4, 3, 3, 8, 1, 2, 3]
+
+console.log(minSubArrayLen(arr1, 7)) // => 2
+console.log(minSubArrayLen(arr2, 9)) // => 2
+console.log(minSubArrayLen(arr3, 52))// => 1
+console.log(minSubArrayLen(arr4, 39))// => 3
+console.log(minSubArrayLen(arr4, 55))// => 5
+console.log(minSubArrayLen(arr5, 11)) // => 2
+console.log(minSubArrayLen(arr4, 95)) // => 0
 
