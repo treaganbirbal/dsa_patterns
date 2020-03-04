@@ -78,3 +78,7 @@
 // console.log(maxSubarraySum(arr5, 3)) //=> null;
 
 //Write a function called minSubArrayLen which accepts two parameters - an array of positive integers and a positive integer.  The function should return the minimal length of a contiguous subarray of which the sum is greater than or equal to the integer passed to the function.  If there is none ,return 0.
+
+const minSubArrayLen = (arr, num) => {
+    return 
+}
