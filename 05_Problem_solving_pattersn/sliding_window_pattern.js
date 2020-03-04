@@ -48,31 +48,33 @@
 // Given an array of integers and a number, write a function called maxSubarraySum, which finds the maximum sun of a subarray with the length of the number passed to the function.
 // Note: that a subarray must consist of consecutive elements from the origin arr.
 
-const maxSubarraySum = (arr, num) => {
-   if(num > arr.length){
-       return null;
-   }
-   let maxSum = 0;
-   let tempSum = 0;
-   for(let i = 0; i < num; i++ ){
-    maxSum += arr[i]
-   }
-   tempSum = maxSum;
-   for(let i = num; i < arr.length; i++){
-       tempSum = tempSum - arr[i - num] + arr[i];
-       maxSum = Math.max(maxSum , tempSum)
-   }
-   return maxSum
-}
+// const maxSubarraySum = (arr, num) => {
+//    if(num > arr.length){
+//        return null;
+//    }
+//    let maxSum = 0;
+//    let tempSum = 0;
+//    for(let i = 0; i < num; i++ ){
+//     maxSum += arr[i]
+//    }
+//    tempSum = maxSum;
+//    for(let i = num; i < arr.length; i++){
+//        tempSum = tempSum - arr[i - num] + arr[i];
+//        maxSum = Math.max(maxSum , tempSum)
+//    }
+//    return maxSum
+// }
 
-let arr1 = [100, 200, 300, 400];
-let arr2 = [1, 4, 2, 10, 23, 3, 1, 0, 20];
-let arr3 = [-3, 4, 0, -2, 6, -1];
-let arr4 = [3, -2, 7, -4, 1, -1, 4, -2, 1]
-let arr5 = [2, 3];
+// let arr1 = [100, 200, 300, 400];
+// let arr2 = [1, 4, 2, 10, 23, 3, 1, 0, 20];
+// let arr3 = [-3, 4, 0, -2, 6, -1];
+// let arr4 = [3, -2, 7, -4, 1, -1, 4, -2, 1]
+// let arr5 = [2, 3];
 
-console.log(maxSubarraySum(arr1, 2)) //=> 700;
-console.log(maxSubarraySum(arr2, 4)) //=> 39;
-console.log(maxSubarraySum(arr3, 2)) //=> 5;
-console.log(maxSubarraySum(arr4, 2)) //=> 5;
-console.log(maxSubarraySum(arr5, 3)) //=> null;
+// console.log(maxSubarraySum(arr1, 2)) //=> 700;
+// console.log(maxSubarraySum(arr2, 4)) //=> 39;
+// console.log(maxSubarraySum(arr3, 2)) //=> 5;
+// console.log(maxSubarraySum(arr4, 2)) //=> 5;
+// console.log(maxSubarraySum(arr5, 3)) //=> null;
+
+//Write a function called minSubArrayLen which accepts two parameters - an array of positive integers and a positive integer.  The function should return the minimal length of a contiguous subarray of which the sum is greater than or equal to the integer passed to the function.  If there is none ,return 0.
