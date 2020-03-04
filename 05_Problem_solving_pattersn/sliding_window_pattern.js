@@ -45,11 +45,24 @@
 // console.log(maxSubarraySum(arr2, 4)); // => 13
 // console.log(maxSubarraySum(arr3, 4)); // => null
 
-//Given an array of integers and a number, write a function called maxSubarraySum, which finds the maximum sun of a subarray with the length of the number passed to the function.
-//Note: that a subarray must consist of consecutive elements from the origin arr.
+// Given an array of integers and a number, write a function called maxSubarraySum, which finds the maximum sun of a subarray with the length of the number passed to the function.
+// Note: that a subarray must consist of consecutive elements from the origin arr.
 
 const maxSubarraySum = (arr, num) => {
-    return;
+   if(num > arr.length){
+       return null;
+   }
+   let maxSum = 0;
+   let tempSum = 0;
+   for(let i = 0; i < num; i++ ){
+    maxSum += arr[i]
+   }
+   tempSum = maxSum;
+   for(let i = num; i < arr.length; i++){
+       tempSum = tempSum - arr[i - num] + arr[i];
+       maxSum = Math.max(maxSum , tempSum)
+   }
+   return maxSum
 }
 
 let arr1 = [100, 200, 300, 400];
