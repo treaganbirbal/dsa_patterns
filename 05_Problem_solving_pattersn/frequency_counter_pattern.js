@@ -2,6 +2,8 @@
 //------naive approach
 
 
+
+
 // function same(array1, array2){
 //     if(array1.length !== array2.length){
 //         return false;
@@ -43,10 +45,10 @@
 //     return true;
 // }
 
-// let arr1 = [2, 2, 3, 4]
-// let arr2 = [4, 9, 4, 16]
-// let arr3 = [1, 4, 5, 16]
-// let arr4 = [4, 4, 9, 16, 17];
+let arr1 = [2, 2, 3, 4]
+let arr2 = [4, 9, 4, 16]
+let arr3 = [1, 4, 5, 16]
+let arr4 = [4, 4, 9, 16, 17];
 
 // console.log(same(arr1, arr3));
 
