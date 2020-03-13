@@ -1,6 +1,11 @@
 //write a function called same that accepts 2 arrays.The function should return true if every value in first arrray has its corresponding squared value in the second array.  The frequency of value must remain the same.
 //------naive approach
 
+function same(array1, array2){
+    if(array1.length !== array2.length){
+        return false; 
+    }
+}
 
 
 
@@ -50,7 +55,7 @@ let arr2 = [4, 9, 4, 16]
 let arr3 = [1, 4, 5, 16]
 let arr4 = [4, 4, 9, 16, 17];
 
-// console.log(same(arr1, arr3));
+console.log(same(arr1, arr3));
 
 //Given two strings, write a function, validAnagram, to determine if the second string is an anagram of the first.  An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema & iceman.
 
