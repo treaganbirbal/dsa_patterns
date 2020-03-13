@@ -22,6 +22,20 @@ function same(array1, array2){
     if(array1.length !== array2.length){
         return false;
     }
+    let arr1Map = {}
+    let arr2Map = {}
+    for(let values of array1){
+        arr1Map[values] = (arr1Map[values] || 0) + 1;
+    }
+    for(let values of array2){
+        arr2Map[values] = (arr2Map[values] || 0) + 1;
+    }
+    for(let key in arr1Map){
+        if(!(key ** 2 in arr2Map)){
+            return false
+        }
+    }
+    return true;
 }
 
 // function same(array1, array2){
@@ -54,7 +68,7 @@ let arr2 = [4, 9, 4, 16]
 let arr3 = [1, 4, 5, 16]
 let arr4 = [4, 4, 9, 16, 17];
 
-console.log(same(arr1, arr3));
+console.log(same(arr1, arr2));
 
 //Given two strings, write a function, validAnagram, to determine if the second string is an anagram of the first.  An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema & iceman.
 
