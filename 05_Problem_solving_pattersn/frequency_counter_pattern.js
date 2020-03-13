@@ -1,35 +1,20 @@
 //write a function called same that accepts 2 arrays.The function should return true if every value in first arrray has its corresponding squared value in the second array.  The frequency of value must remain the same.
 //------naive approach
 
-function same(array1, array2){
+function same (array1, array2){
     if(array1.length !== array2.length){
-        return false; 
+        return false;
     }
     for(let i = 0; i < array1.length; i++){
-        let correctIndex = array2.indexOf(array1[i]**2)
-        if(correctIndex === -1){
-            return false;
-        }
-        array1.splice(correctIndex,1)
+        let correctIdx = array2.indexOf(array1[i]**2)
+            if(correctIdx === -1){
+                return false;
+            }
+            array1.splice(correctIdx, 1)
     }
     return true;
 }
 
-
-
-// function same(array1, array2){
-//     if(array1.length !== array2.length){
-//         return false;
-//     }
-//     for(let i = 0; i < array1.length; i++){
-//         let correctIndex = array2.indexOf(array1[i]**2)
-//         if(correctIndex === -1){
-//             return false;
-//         }
-//         array1.splice(correctIndex, 1)
-//     }
-//     return true;
-// }
 
 //---------o(n)
 
@@ -63,7 +48,7 @@ let arr2 = [4, 9, 4, 16]
 let arr3 = [1, 4, 5, 16]
 let arr4 = [4, 4, 9, 16, 17];
 
-console.log(same(arr1, arr2));
+console.log(same(arr1, arr3));
 
 //Given two strings, write a function, validAnagram, to determine if the second string is an anagram of the first.  An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema & iceman.
 
