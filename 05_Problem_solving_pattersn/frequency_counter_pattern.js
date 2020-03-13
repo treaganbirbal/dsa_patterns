@@ -1,22 +1,28 @@
 //write a function called same that accepts 2 arrays.The function should return true if every value in first arrray has its corresponding squared value in the second array.  The frequency of value must remain the same.
 //------naive approach
 
-function same (array1, array2){
-    if(array1.length !== array2.length){
-        return false;
-    }
-    for(let i = 0; i < array1.length; i++){
-        let correctIdx = array2.indexOf(array1[i]**2)
-            if(correctIdx === -1){
-                return false;
-            }
-            array1.splice(correctIdx, 1)
-    }
-    return true;
-}
+// function same (array1, array2){
+//     if(array1.length !== array2.length){
+//         return false;
+//     }
+//     for(let i = 0; i < array1.length; i++){
+//         let correctIdx = array2.indexOf(array1[i]**2)
+//             if(correctIdx === -1){
+//                 return false;
+//             }
+//             array1.splice(correctIdx, 1)
+//     }
+//     return true;
+// }
 
 
 //---------o(n)
+
+function same(array1, array2){
+    if(array1.length !== array2.length){
+        return false;
+    }
+}
 
 // function same(array1, array2){
 //     if(array1.length !== array2.length){
