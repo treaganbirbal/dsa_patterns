@@ -5,6 +5,14 @@ function same(array1, array2){
     if(array1.length !== array2.length){
         return false; 
     }
+    for(let i = 0; i < array1.length; i++){
+        let correctIndex = array2.indexOf(array1[i]**2)
+        if(correctIndex === -1){
+            return false;
+        }
+        array1.splice(correctIndex,1)
+    }
+    return true;
 }
 
 
@@ -55,7 +63,7 @@ let arr2 = [4, 9, 4, 16]
 let arr3 = [1, 4, 5, 16]
 let arr4 = [4, 4, 9, 16, 17];
 
-console.log(same(arr1, arr3));
+console.log(same(arr1, arr2));
 
 //Given two strings, write a function, validAnagram, to determine if the second string is an anagram of the first.  An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema & iceman.
 
@@ -153,19 +161,19 @@ console.log(same(arr1, arr3));
 
 // Implement a function called areThereDuplicates, which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. 
 
-function areThereDuplicates(){
-    const collection = {};
-    for(let values in arguments){
-        collection[arguments[values]] = (collection[arguments[values]] || 0) + 1
-    }
-    for(let key in collection){
-        if(collection[key] > 1){
-            return true;
-        }
-    }
-    return false
-}
+// function areThereDuplicates(){
+//     const collection = {};
+//     for(let values in arguments){
+//         collection[arguments[values]] = (collection[arguments[values]] || 0) + 1
+//     }
+//     for(let key in collection){
+//         if(collection[key] > 1){
+//             return true;
+//         }
+//     }
+//     return false
+// }
 
-console.log(areThereDuplicates(1, 2, 3)) //=> false;
-console.log(areThereDuplicates(1, 2, 2)) //=> true;
-console.log(areThereDuplicates('a', 'b', 'c', 'a')) // => true;
+// console.log(areThereDuplicates(1, 2, 3)) //=> false;
+// console.log(areThereDuplicates(1, 2, 2)) //=> true;
+// console.log(areThereDuplicates('a', 'b', 'c', 'a')) // => true;
