@@ -15,29 +15,42 @@
 //     return true;
 // }
 
+function same(array1, array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  }
+  for (let i = 0; i < array1.length; i++) {
+    let correctIdx = array2.indexOf(array1[i] ** 2);
+    if (correctIdx === -1) {
+      return false;
+    }
+    array1.splice(correctIdx, 1);
+  }
+  return true;
+}
 
 //---------o(n)
 
-function same(array1, array2){
-    if(array1.length !== array2.length){
-        return false;
-    }
-    let arr1Map = {}
-    let arr2Map = {}
-    for(let values of array1){
-        arr1Map[values] = (arr1Map[values] || 0) + 1;
-    }
-    for(let values of array2){
-        arr2Map[values] = (arr2Map[values] || 0) + 1;
-    }
-    for(let key in arr1Map){
-        if(!(key ** 2 in arr2Map)){
-            return false
-        }
-    }
-    return true;
-}
- 
+// function same(array1, array2){
+//     if(array1.length !== array2.length){
+//         return false;
+//     }
+//     let arr1Map = {}
+//     let arr2Map = {}
+//     for(let values of array1){
+//         arr1Map[values] = (arr1Map[values] || 0) + 1;
+//     }
+//     for(let values of array2){
+//         arr2Map[values] = (arr2Map[values] || 0) + 1;
+//     }
+//     for(let key in arr1Map){
+//         if(!(key ** 2 in arr2Map)){
+//             return false
+//         }
+//     }
+//     return true;
+// }
+
 // function same(array1, array2){
 //     if(array1.length !== array2.length){
 //         return false;
@@ -63,9 +76,9 @@ function same(array1, array2){
 //     return true;
 // }
 
-let arr1 = [2, 2, 3, 4]
-let arr2 = [4, 9, 4, 16]
-let arr3 = [1, 4, 5, 16]
+let arr1 = [2, 2, 3, 4];
+let arr2 = [4, 9, 4, 16];
+let arr3 = [1, 4, 5, 16];
 let arr4 = [4, 4, 9, 16, 17];
 
 console.log(same(arr1, arr2));
@@ -132,7 +145,7 @@ console.log(same(arr1, arr2));
 
 // console.log(validAnagram(forthStr, thirdStr));
 
-//Write a function called sameFrequencty. Given two positive integers, find out if the two numbers have the same frequency of digits.  
+//Write a function called sameFrequencty. Given two positive integers, find out if the two numbers have the same frequency of digits.
 //Your solution MUST have the following complexities: time: O(n)
 
 // function sameFrequency(int1, int2){
@@ -164,7 +177,7 @@ console.log(same(arr1, arr2));
 // console.log(sameFrequency(3589578, 5879385)) // => true;
 // console.log(sameFrequency(22, 222)) // => false;
 
-// Implement a function called areThereDuplicates, which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. 
+// Implement a function called areThereDuplicates, which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.
 
 // function areThereDuplicates(){
 //     const collection = {};
