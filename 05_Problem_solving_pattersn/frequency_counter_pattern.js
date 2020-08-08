@@ -37,32 +37,32 @@
 //     return true;
 // }
 
-function same(array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  }
-  let arr1Map = {};
-  let arr2Map = {};
-  for (let values of array1) {
-    arr1Map[values] = (arr1Map[values] || 0) + 1;
-  }
-  for (let values of array2) {
-    arr2Map[values] = (arr2Map[values] || 0) + 1;
-  }
-  for (let key in arr1Map) {
-    if (!(key ** 2 in arr2Map)) {
-      return false;
-    }
-  }
-  return true;
-}
+// function same(array1, array2) {
+//   if (array1.length !== array2.length) {
+//     return false;
+//   }
+//   let arr1Map = {};
+//   let arr2Map = {};
+//   for (let values of array1) {
+//     arr1Map[values] = (arr1Map[values] || 0) + 1;
+//   }
+//   for (let values of array2) {
+//     arr2Map[values] = (arr2Map[values] || 0) + 1;
+//   }
+//   for (let key in arr1Map) {
+//     if (!(key ** 2 in arr2Map)) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
-let arr1 = [2, 2, 3, 4];
-let arr2 = [4, 9, 4, 16];
-let arr3 = [1, 4, 5, 16];
-let arr4 = [4, 4, 9, 16, 17];
+// let arr1 = [2, 2, 3, 4];
+// let arr2 = [4, 9, 4, 16];
+// let arr3 = [1, 4, 5, 16];
+// let arr4 = [4, 4, 9, 16, 17];
 
-console.log(same(arr1, arr2));
+// console.log(same(arr1, arr2));
 
 //Given two strings, write a function, validAnagram, to determine if the second string is an anagram of the first.  An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema & iceman.
 
@@ -89,6 +89,27 @@ console.log(same(arr1, arr2));
 //      }
 //     }
 // }
+
+const validAnagram = (str1, str2) => {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+  const str1Map = {};
+  const str2Map = {};
+  for (let values of str1) {
+    str1Map[values] = (str1Map[values] || 0) + 1;
+  }
+  for (let values of str2) {
+    str2Map[values] = (str2Map[values] || 0) + 1;
+  }
+  for (let char in str1Map) {
+    if (str1Map[char] === str2Map[char]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
 
 //---more effecient solution----
 
@@ -119,12 +140,12 @@ console.log(same(arr1, arr2));
 //     return true;
 // }
 
-// let firstStr = 'icemannnn';
-// let secondStr = 'cinnnnema';
-// let thirdStr = 'niceman';
-// let forthStr = 'icefan';
+let firstStr = "icemannnn";
+let secondStr = "cinnnnema";
+let thirdStr = "nifeac";
+let forthStr = "icefan";
 
-// console.log(validAnagram(forthStr, thirdStr));
+console.log(validAnagram(forthStr, thirdStr));
 
 //Write a function called sameFrequencty. Given two positive integers, find out if the two numbers have the same frequency of digits.
 //Your solution MUST have the following complexities: time: O(n)
