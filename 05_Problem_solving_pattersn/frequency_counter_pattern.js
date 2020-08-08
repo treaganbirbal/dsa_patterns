@@ -92,32 +92,32 @@
 
 //---more effecient solution----
 
-const validAnagram = (str1, str2) => {
-  if (str1.length !== str2.length) {
-    return false;
-  }
-  const lettersMap = {};
-  for (let i = 0; i < str1.length; i++) {
-    let letter = str1[i];
-    lettersMap[letter] ? (lettersMap[letter] += 1) : (lettersMap[letter] = 1);
-  }
-  for (let i = 0; i < str2.length; i++) {
-    let letter = str2[i];
-    if (!lettersMap[letter]) {
-      return false;
-    } else {
-      lettersMap[letter] -= 1;
-    }
-  }
-  return true;
-};
+// const validAnagram = (str1, str2) => {
+//   if (str1.length !== str2.length) {
+//     return false;
+//   }
+//   const lettersMap = {};
+//   for (let i = 0; i < str1.length; i++) {
+//     let letter = str1[i];
+//     lettersMap[letter] ? (lettersMap[letter] += 1) : (lettersMap[letter] = 1);
+//   }
+//   for (let i = 0; i < str2.length; i++) {
+//     let letter = str2[i];
+//     if (!lettersMap[letter]) {
+//       return false;
+//     } else {
+//       lettersMap[letter] -= 1;
+//     }
+//   }
+//   return true;
+// };
 
-let firstStr = "icemannnn";
-let secondStr = "cinnnnema";
-let thirdStr = "nifeac";
-let forthStr = "icefad";
+// let firstStr = "icemannnn";
+// let secondStr = "cinnnnema";
+// let thirdStr = "nifeac";
+// let forthStr = "icefad";
 
-console.log(validAnagram(forthStr, thirdStr));
+// console.log(validAnagram(forthStr, thirdStr));
 
 //Write a function called sameFrequencty. Given two positive integers, find out if the two numbers have the same frequency of digits.
 //Your solution MUST have the following complexities: time: O(n)

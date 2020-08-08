@@ -1,17 +1,18 @@
 //Write a function called sumZero which accepts a sorted array of integers.  the function shoudl find the first pair where the sum is 0. Return an array that includes both values that sum to zero or undefined if a pair does not exist.
 //---O(n^2) solution----
-// function sumZero(arr){
-//     if(!arr.length){
-//         return undefined;
-//     }
-//     for(let i = 0; i < arr.length; i++){
-//         for(let j = i+1; j < arr.length; j++){
-//             if(arr[i] + arr[j] === 0){
-//                 return [arr[i], arr[j]]
-//             }
-//         }
-//     }
-// }
+
+function sumZero(arr) {
+  if (!arr.length) {
+    return undefined;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === 0) {
+        return [arr[i], arr[j]];
+      }
+    }
+  }
+}
 
 //---O(n) Solution---
 
@@ -34,13 +35,13 @@
 //     }
 // }
 
-// const arr1 = [-3, -2, -1, 0, 3] //=> [-3, 3]
-// const arr2 = [-3, -1 , 0, 1, 2, 4] // => [-1, 1]
-// const arr3 = [-4, -3, -2, -1, 0, 1, 2, 5] // => [-2, 2]
+const arr1 = [-3, -2, -1, 0, 3]; //=> [-3, 3]
+const arr2 = [-3, -1, 0, 1, 2, 4]; // => [-1, 1]
+const arr3 = [-4, -3, -2, -1, 0, 1, 2, 5]; // => [-2, 2]
 
-// console.log(sumZero(arr1));
-// console.log(sumZero(arr2));
-// console.log(sumZero(arr3));
+console.log(sumZero(arr1));
+console.log(sumZero(arr2));
+console.log(sumZero(arr3));
 
 //Implement a function call countUnqiueValues, which accepts a sorted Array, and counts the unique values in the array.  Tere can be negative numbers in the array, but it will alway be sorted.
 
@@ -48,7 +49,7 @@
 //     if(!arr.length){
 //         return 0;
 //     }
-//     let i = 0; 
+//     let i = 0;
 //     for(let j = 1; j < arr.length; j++){
 //         if(arr[i] !== arr[j]){
 //             i++;
@@ -68,7 +69,7 @@
 // console.log(countUnqiueValues(arr3)) // => 0
 // console.log(countUnqiueValues(arr4)) // => 4
 
-// Implement a function called areThereDuplicates, which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. 
+// Implement a function called areThereDuplicates, which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.
 
 // function areThereDuplicates(...args){
 //     args.sort()
@@ -87,7 +88,6 @@
 // function areThereDuplicates() {
 //     return new Set(arguments).size !== arguments.length;
 //   }
-  
 
 // console.log(areThereDuplicates(1, 2, 3)) //=> false;
 // console.log(areThereDuplicates(1, 2, 2)) //=> true;
@@ -101,7 +101,7 @@
 //         return false;
 //     }
 //     let sum = 0;
-//     let start = 0; 
+//     let start = 0;
 //     let end = arr.length - 1;
 //     while(start < end){
 //         let average = (arr[start] + arr[end])/2;
@@ -126,24 +126,23 @@
 // console.log(averagePair(arr3, 4.1)) // => false;
 // console.log(averagePair(arr1, 4)) // => false;
 
-
 //Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. In other words, the function should check whether the character in the first string appears somewhere in the second sring, without their order changing.
 
-function isSubsequence(str1, str2){
-    let i = 0; 
-    let j = 0;
-    if(!str1.length){
-        return true;
-    }
-    while( j < str2.length){
-        if(str2[j] === str1[i]) i++;
-        if(i === str1.length) return true;
-        j++
-    }
-    return false;
-}
+// function isSubsequence(str1, str2){
+//     let i = 0;
+//     let j = 0;
+//     if(!str1.length){
+//         return true;
+//     }
+//     while( j < str2.length){
+//         if(str2[j] === str1[i]) i++;
+//         if(i === str1.length) return true;
+//         j++
+//     }
+//     return false;
+// }
 
-console.log(isSubsequence('hello', 'hello world')) // => true;
-console.log(isSubsequence('sing', 'sting')) // => true;
-console.log(isSubsequence('abc', 'abracadabra')) // => true;
-console.log(isSubsequence('abc', 'acb')) // => false;
+// console.log(isSubsequence('hello', 'hello world')) // => true;
+// console.log(isSubsequence('sing', 'sting')) // => true;
+// console.log(isSubsequence('abc', 'abracadabra')) // => true;
+// console.log(isSubsequence('abc', 'acb')) // => false;
