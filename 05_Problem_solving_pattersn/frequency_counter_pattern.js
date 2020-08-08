@@ -90,60 +90,32 @@
 //     }
 // }
 
+//---more effecient solution----
+
 const validAnagram = (str1, str2) => {
   if (str1.length !== str2.length) {
     return false;
   }
-  const str1Map = {};
-  const str2Map = {};
-  for (let values of str1) {
-    str1Map[values] = (str1Map[values] || 0) + 1;
+  const lettersMap = {};
+  for (let i = 0; i < str1.length; i++) {
+    let letter = str1[i];
+    lettersMap[letter] ? (lettersMap[letter] += 1) : (lettersMap[letter] = 1);
   }
-  for (let values of str2) {
-    str2Map[values] = (str2Map[values] || 0) + 1;
-  }
-  for (let char in str1Map) {
-    if (str1Map[char] === str2Map[char]) {
-      return true;
-    } else {
+  for (let i = 0; i < str2.length; i++) {
+    let letter = str2[i];
+    if (!lettersMap[letter]) {
       return false;
+    } else {
+      lettersMap[letter] -= 1;
     }
   }
+  return true;
 };
-
-//---more effecient solution----
-
-// const validAnagram = (str1, str2) => {
-//     //if the the strings are different length...
-//     if(str1.length !== str2.length){
-//         //...return false
-//         return false;
-//     }
-//     //create an object to store letters and num of occurances
-//     const lookup = {};
-//     //loop thru a str to build out lookup object
-//     for(let i = 0; i < str1.length; i++){
-//         let letter = str1[i];
-//          //if letter exists, increment; otherwise set to 1.
-//          lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
-//     }
-//     //loop thru the other str to check if letters exist in obj
-//     for(let i = 0; i < str2.length; i++){
-//         let letter = str2[i];
-//         //cannot find letter or letter is 0 than its not an anagram
-//         if(!lookup[letter]){
-//             return false
-//         } else {
-//             lookup[letter]-= 1;
-//         }
-//     }
-//     return true;
-// }
 
 let firstStr = "icemannnn";
 let secondStr = "cinnnnema";
 let thirdStr = "nifeac";
-let forthStr = "icefan";
+let forthStr = "icefad";
 
 console.log(validAnagram(forthStr, thirdStr));
 
