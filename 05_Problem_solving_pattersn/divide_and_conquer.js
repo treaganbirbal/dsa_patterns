@@ -10,27 +10,26 @@
 //     return -1
 // }
 
-const search = (arr, value) => {
-    let min = 0; 
-    let max = arr.length - 1
-    
-    while(min <= max){
-        let middle = Math.floor((min + max) / 2);
-        let currentEl = arr[middle];
+const search = (arr, val) => {
+  let left = 0;
+  let right = arr.length - 1;
 
-        if(arr[middle] < value){
-            min = middle + 1;
-        } else if( arr[middle] > value){
-            max = middle -1
-        } else {
-            return middle;
-        }
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2);
+    let current = arr[middle];
+    if (arr[middle] < val) {
+      left = middle + 1;
+    } else if (arr[middle] > val) {
+      right = middle - 1;
+    } else {
+      return middle;
     }
-    return -1
-}
+  }
+  return -1;
+};
 
-let arr1 = [1,2,3,4,5,6];
+let arr1 = [1, 2, 3, 4, 5, 6];
 
-console.log(search(arr1, 4)) // => 3 
-console.log(search(arr1, 6)) // => 5 
-console.log(search(arr1, 10)) // => -1 
+console.log(search(arr1, 4)); // => 3
+console.log(search(arr1, 6)); // => 5
+console.log(search(arr1, 10)); // => -1
