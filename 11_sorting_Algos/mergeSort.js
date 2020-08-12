@@ -2,7 +2,21 @@
 //exploits the act that arrays of 0 or 1 elements are always sorted
 //Works by decomposing an array into smaller arrays of 0 or 1 elements and then building up a newly sorted array
 
-function mergeSort() {}
+function mergeSort(arr) {
+  //base case
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  //break up the array into havles until there are arrays of zero or one element
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+
+  //merge those arrays with the other sorted arrays until you have are back at the full length of the array
+  return merge(left, right);
+}
+
 //given two sorted arrays this helper function should create a new array which is also sorted and consists of all the elements in the two input arrays
 //time: O(n + m)  space: O(n+m)
 function merge(arr1, arr2) {
@@ -35,4 +49,4 @@ function merge(arr1, arr2) {
   return output;
 }
 
-console.log(merge([3, 5, 8, 10], [1, 2, 4, 6, 9]));
+console.log(mergeSort([3, 35, 5, 8, 55, 10, 1, 84, 35, 11, 2, 4, 6, 109, 9]));
