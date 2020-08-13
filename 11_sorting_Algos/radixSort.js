@@ -6,6 +6,20 @@
 //in order to implement radix sort, it's helpful to build a few helper functions first:
 
 //getDigit(num, place) returns the digit in num at the given place value
+
+function radixSort(arr) {
+  let highestDigits = mostDigits(arr);
+  for (let i = 0; i < highestDigits; i++) {
+    let buckets = Array.from({ length: 10 }, () => []);
+    for (let j = 0; j < arr.length; j++) {
+      let digit = getDigit(arr[j], i);
+      buckets[digit].push(arr[j]);
+    }
+    arr = [].concat(...buckets);
+  }
+  return arr;
+}
+
 function getDigit(num, i) {
   return Math.floor((Math.abs(num) / Math.pow(10, i)) % 10);
 }
@@ -25,15 +39,6 @@ function mostDigits(arr) {
   return maxCount;
 }
 
-console.log(
-  mostDigits([
-    34324,
-    34312,
-    12443545235425254523,
-    432,
-    1,
-    1,
-    233,
-    1341433423423,
-  ])
-);
+let array = [134423, 23423432, 1, 1, 2, 3333, 43243, 2];
+
+console.log(radixSort(array));
