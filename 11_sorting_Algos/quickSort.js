@@ -2,7 +2,18 @@
 //Works by selecting one element('pivot') and finding the index where the pivot should end up in the sorted array
 //Once the pivot is positioned appropriately, quick sort can be applied on either side of the pivot
 
-function quickSort(arr) {}
+//call the pivot helper on the array
+//when the helper returns the updated pivot index, recursively call the pivot helper on the subarray to the left of that idx
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivotIdx = pivot(arr, left, right);
+    //left
+    quickSort(arr, left, pivotIdx - 1);
+    //right
+    quickSort(arr, pivotIdx + 1, right);
+  }
+  return arr;
+}
 
 //pivot helper/partition
 //in order to implement quickSort, it's useful to first implement a function responsible for arranging elements in an array on either side of a pivot.
@@ -33,4 +44,4 @@ function swap(arr, i, j) {
   return arr;
 }
 
-console.log(pivot([4, 8, 2, 1, 5, 7, 6, 3]));
+console.log(quickSort([4, 8, 2, 1, 5, 7, 6, 3]));
