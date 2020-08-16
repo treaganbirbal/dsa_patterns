@@ -81,17 +81,44 @@ class SinglyLinkedList {
 
   //add a new node to the beginning of the linked list
   unshift(val) {
+    //create a new node to add
+    //if no nodes
+    //head and tail = new Node
+    //else set the newly created nodes' next property to be current head property
+    //set the head property to be the newly created node
+    //increment length by 1
+    //return linked list
     const newNode = new Node(val);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
     }
-    let oldHead = this.head;
-    this.head = newNode;
-    this.head.next = oldHead;
     this.length++;
     return this;
   }
+
+  //retrieving a node by it's position in the linked list
+  get(idx) {
+    //accept an index as position
+    //if the idx is negative or >= to length
+    //return null;
+    //loop through the list until you reach the index and return the node at the specific index
+    if (idx < 0 || idx >= this.length) {
+      return null;
+    }
+    let counter = 0;
+    let currNode = this.head;
+    while (counter !== idx) {
+      currNode = currNode.next;
+      counter++;
+    }
+    return currNode;
+  }
+
+  set() {}
 }
 
 let list = new SinglyLinkedList();
@@ -100,5 +127,6 @@ list.push(1).push(2).push(3).push({ name: "Treagan" });
 // console.log("removed last item is: ", list.pop());
 // console.log(list);
 // console.log("removed first item is:", list.shift());
-list.unshift(10);
+// list.unshift(10);
 console.log(list);
+console.log("got node: ", list.get(3));
