@@ -36,7 +36,17 @@ class DoublyLinkedList {
     return this;
   }
 
-  pop() {}
+  //remove a node from the end of the linked list
+  pop() {
+    if (!this.tail) {
+      return undefined;
+    }
+    let lastNode = this.tail;
+    this.tail = lastNode.prev;
+    this.tail.next = null;
+    this.length--;
+    return lastNode;
+  }
 
   shift() {}
 
@@ -56,4 +66,7 @@ class DoublyLinkedList {
 }
 
 const list = new DoublyLinkedList();
-console.log(list.push(1).push(2).push(3));
+list.push(1).push(2).push(3);
+console.log(list);
+console.log("removed Node:", list.pop());
+console.log(list);
