@@ -130,6 +130,39 @@ class SinglyLinkedList {
       return null;
     }
   }
+
+  //adding a node to the linked list at a specific position
+  insert(idx, val) {
+    //takes indx and val as args
+    //if index < 0 || > list.length
+    // return false;
+    //if index is the same a the length; push a new node to the end of the list
+    //if index is 0, unshift new node to the beginning of list;
+    // else get item 1 before idx
+    //set next to the new node
+    //get the item 1 after idx
+    //set next of new node
+    //increment length by
+    //return true
+    if (idx < 0 || idx > this.length) {
+      return false;
+    } else {
+      const newNode = new Node(val);
+      if (idx === this.length) {
+        return !!this.push(newNode);
+      } else if (idx === 0) {
+        return !!this.unshift(newNode);
+      } else {
+        let prev = this.get(idx - 1);
+        let nextNode = prev.next;
+        prev.next = newNode;
+        newNode.next = nextNode;
+
+        this.length++;
+        return true;
+      }
+    }
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -140,5 +173,4 @@ list.push(1).push(2).push(3).push({ name: "Treagan" });
 // console.log("removed first item is:", list.shift());
 // list.unshift(10);
 // console.log("got node: ", list.get(3));
-// console.log(list.set(3, { lastName: "Birbal" }));
-console.log(list.head.next.next);
+console.log(list.insert(3, { name: "Treagan Birbal" }));
