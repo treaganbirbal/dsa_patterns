@@ -118,7 +118,18 @@ class SinglyLinkedList {
     return currNode;
   }
 
-  set() {}
+  //changing the value of a node based on its position in linked list
+  set(idx, val) {
+    //accepts idx, val
+    //use get method to find the node
+    //update val to new val
+    let nodeToUpdate = this.get(idx);
+    if (nodeToUpdate) {
+      nodeToUpdate.value = val;
+    } else {
+      return null;
+    }
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -128,5 +139,6 @@ list.push(1).push(2).push(3).push({ name: "Treagan" });
 // console.log(list);
 // console.log("removed first item is:", list.shift());
 // list.unshift(10);
-console.log(list);
-console.log("got node: ", list.get(3));
+// console.log("got node: ", list.get(3));
+// console.log(list.set(3, { lastName: "Birbal" }));
+console.log(list.head.next.next);
