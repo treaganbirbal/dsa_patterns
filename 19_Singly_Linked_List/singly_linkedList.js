@@ -59,19 +59,29 @@ class SinglyLinkedList {
     }
     return currNode;
   }
+
+  //removing a new node from the beginning of the linked list
+  shift() {
+    //if there are no nodes return undefined
+    //store the current head property in a variable
+    //set the head property to be current head's next property
+    //decrement the length by 1
+    //return removed node
+    if (!this.head) {
+      return undefined;
+    }
+    let removedNode = this.head;
+    this.head = removedNode.next;
+    removedNode.next = null;
+    this.length--;
+    return removedNode;
+  }
 }
 
 let list = new SinglyLinkedList();
 list.push(1).push(2).push(3).push({ name: "Treagan" });
 console.log(list);
-list.pop();
+console.log("removed last item is: ", list.pop());
 console.log(list);
-
-list.pop();
-console.log(list);
-
-list.pop();
-console.log(list);
-
-list.pop();
+console.log("removed first item is:", list.shift());
 console.log(list);
