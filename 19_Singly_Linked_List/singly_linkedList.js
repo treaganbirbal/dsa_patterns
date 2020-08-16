@@ -24,16 +24,54 @@ class SinglyLinkedList {
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
-      this.length++;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
-      this.length++;
     }
+    this.length++;
     return this;
+  }
+  //pop removes node from end of linked list
+  pop() {
+    //if there are no nodes in list return undefined
+    //loop through entire list until you get tail
+    //keep track of previous value from tail
+    //set the next property of prev to be null
+    //set tail to prev node
+    //decrement the lengh of list
+    //return the value of the node removed
+    if (!this.head) {
+      return undefined;
+    }
+    let currNode = this.head;
+    let prev = currNode;
+    while (currNode.next) {
+      prev = currNode;
+      currNode = currNode.next;
+    }
+    currNode = this.tail;
+    this.tail = prev;
+    this.tail.next = null;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return currNode;
   }
 }
 
 let list = new SinglyLinkedList();
-list.push(1).push(2).push(3);
+list.push(1).push(2).push(3).push({ name: "Treagan" });
+console.log(list);
+list.pop();
+console.log(list);
+
+list.pop();
+console.log(list);
+
+list.pop();
+console.log(list);
+
+list.pop();
 console.log(list);
