@@ -192,6 +192,41 @@ class SinglyLinkedList {
       }
     }
   }
+
+  //reverse the linked list in place
+  reverse() {
+    //swap the head and tail
+    //create a variable to store next
+    //create a variable to store prev
+    //create a variable to store current
+    //initalize current to the head property
+    //loop through the list
+    //set next to be the next property of current node is
+    //set the next property on the node to whatver prev is
+    //set the node variable to
+    let currentNode = this.head;
+    this.head = this.tail;
+    this.tail = currentNode;
+    let next = null;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
+      next = currentNode.next;
+      currentNode.next = prev;
+      prev = currentNode;
+      currentNode = next;
+    }
+    return this;
+  }
+
+  print() {
+    const arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.value);
+      current = current.next;
+    }
+    console.log(arr);
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -204,6 +239,8 @@ list.push(1).push(2).push(3).push({ name: "Treagan" });
 // console.log("got node: ", list.get(3));
 // console.log(list.insert(3, { name: "Treagan Birbal" }));
 console.log(list);
-console.log("removed node is: ", list.remove(3));
+// console.log("removed node is: ", list.remove(3));
 // console.log(list.get(3));
-console.log(list);
+list.print();
+list.reverse();
+list.print();
