@@ -81,10 +81,11 @@ class DoublyLinkedList {
     if (this.length === 1) {
       this.head = null;
       this.tail = null;
+    } else {
+      this.head = this.head.next;
+      this.head.prev = null;
+      returnedNode.next = null;
     }
-    this.head = this.head.next;
-    this.head.prev = null;
-    returnedNode.next = null;
     this.length--;
     return returnedNode;
   }
@@ -109,4 +110,6 @@ const list = new DoublyLinkedList();
 list.push(1).push(2).push(3);
 console.log(list);
 console.log("shifted", list.shift());
+console.log("shift", list.shift());
+list.shift();
 console.log(list);
