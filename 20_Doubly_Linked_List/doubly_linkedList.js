@@ -111,7 +111,37 @@ class DoublyLinkedList {
     this.length++;
   }
 
-  get() {}
+  //accessing a node in a doubly linked list by its position
+  get(idx) {
+    //if index is less than 0 or greater than or equal to length return null
+    //if index is less than or equal to half the length of list
+    //loop through list starting from head and work towards middle
+    //return the node once it is found
+    //if the index is greater the half the length of list
+    //loop through the list starting from the tail towards middle
+    //return the node once it is found
+    if (idx < 0 || idx >= this.length) {
+      return null;
+    }
+    if (idx <= Math.floor(this.length / 2)) {
+      let counter = 0;
+      let current = this.head;
+      while (counter !== idx) {
+        let counter = 0;
+        current = current.next;
+        counter++;
+      }
+      return current;
+    } else {
+      let counter = this.length - 1;
+      let current = this.tail;
+      while (counter !== idx) {
+        current = current.prev;
+        counter--;
+      }
+      return current;
+    }
+  }
 
   set() {}
 
@@ -125,12 +155,24 @@ class DoublyLinkedList {
 }
 
 const list = new DoublyLinkedList();
-// list.push(1).push(2).push(3);
+list
+  .push(1)
+  .push(2)
+  .push(3)
+  .push(4)
+  .push(5)
+  .push(6)
+  .push(7)
+  .push(8)
+  .push(9)
+  .push(10);
 // console.log(list);
 // console.log("shifted", list.shift());
 // console.log("shift", list.shift());
 // list.shift();
-console.log(list);
-list.unshift(4);
-list.unshift(3);
+// console.log(list);
+// list.unshift(4);
+// list.unshift(3);
+list.unshift("treagan");
+console.log("got Node:", list.get(10));
 console.log(list);
