@@ -127,7 +127,7 @@ class DoublyLinkedList {
       let counter = 0;
       let current = this.head;
       while (counter !== idx) {
-        let counter = 0;
+        counter = 0;
         current = current.next;
         counter++;
       }
@@ -174,5 +174,5 @@ list
 // list.unshift(4);
 // list.unshift(3);
 list.unshift("treagan");
-console.log("got Node:", list.get(10));
+console.log("got Node:", list.get(1));
 console.log(list);
