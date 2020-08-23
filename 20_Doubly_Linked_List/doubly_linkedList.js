@@ -159,7 +159,35 @@ class DoublyLinkedList {
     return false;
   }
 
-  insert() {}
+  //Adding a node in the Doubly Linked List by a certain position
+  insert(idx, val) {
+    //if the idx is less than zero or greater   than or equal to the length return false
+    //if the idx is 0, unshift
+    //if the idx is the same as the length, push
+    //else use the get method to access idx - 1
+    //set the next and prev properties on the correct nodes to link everything together
+    //increment length by one
+    //return true
+    if (idx < 0 || idx > this.length) {
+      return false;
+    }
+    const newNode = new Node(val);
+    if (idx === 0) {
+      this.unshift(val);
+    }
+    if (idx === this.length) {
+      this.push(val);
+    } else {
+      let prev = this.get(idx - 1);
+      let next = prev.next;
+      newNode.prev = prev;
+      newNode.next = next;
+      prev.next = newNode;
+      next.prev = newNode;
+      this.length++;
+    }
+    return true;
+  }
 
   remove() {}
 
@@ -189,5 +217,7 @@ list
 // list.unshift(3);
 list.unshift("treagan");
 // console.log("got Node:", list.get(1));
-console.log(list.set(10, "Treagan Birbal"));
-console.log(list);
+// console.log(list.set(10, "Treagan Birbal"));
+console.log(list.length);
+console.log(list.insert(1, "Treagan Birbal"));
+console.log(list.get(1).next);
