@@ -144,7 +144,20 @@ class DoublyLinkedList {
     return current;
   }
 
-  set() {}
+  //Replacing the value of a node at a position to new value in double linked list
+  set(idx, val) {
+    //if idx is less than 0 or idx is greater or equal length of list
+    //return null
+    //create a variable which is the result of the get method at the index passed to the function
+    //if the get method returns valid node, set the value of that node to be the value passed in to the function
+    //return true
+    let foundNode = this.get(idx);
+    if (foundNode) {
+      foundNode.value = val;
+      return true;
+    }
+    return false;
+  }
 
   insert() {}
 
@@ -175,5 +188,6 @@ list
 // list.unshift(4);
 // list.unshift(3);
 list.unshift("treagan");
-console.log("got Node:", list.get(1));
+// console.log("got Node:", list.get(1));
+console.log(list.set(10, "Treagan Birbal"));
 console.log(list);
