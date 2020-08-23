@@ -123,24 +123,25 @@ class DoublyLinkedList {
     if (idx < 0 || idx >= this.length) {
       return null;
     }
+    let counter;
+    let current;
     if (idx <= Math.floor(this.length / 2)) {
-      let counter = 0;
-      let current = this.head;
+      counter = 0;
+      current = this.head;
       while (counter !== idx) {
         counter = 0;
         current = current.next;
         counter++;
       }
-      return current;
     } else {
-      let counter = this.length - 1;
-      let current = this.tail;
+      counter = this.length - 1;
+      current = this.tail;
       while (counter !== idx) {
         current = current.prev;
         counter--;
       }
-      return current;
     }
+    return current;
   }
 
   set() {}
