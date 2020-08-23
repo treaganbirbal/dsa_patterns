@@ -125,11 +125,10 @@ class DoublyLinkedList {
     }
     let counter;
     let current;
-    if (idx <= Math.floor(this.length / 2)) {
+    if (idx <= this.length / 2) {
       counter = 0;
       current = this.head;
       while (counter !== idx) {
-        counter = 0;
         current = current.next;
         counter++;
       }
@@ -173,10 +172,10 @@ class DoublyLinkedList {
     }
     const newNode = new Node(val);
     if (idx === 0) {
-      this.unshift(val);
+      return !!this.unshift(val);
     }
     if (idx === this.length) {
-      this.push(val);
+      return !!this.push(val);
     } else {
       let prev = this.get(idx - 1);
       let next = prev.next;
@@ -189,7 +188,35 @@ class DoublyLinkedList {
     return true;
   }
 
-  remove() {}
+  //Removing a node in a Doubly Linked List by a certain position
+  remove(idx) {
+    //if idx is less than 0 or idx is greater than or equal to length
+    //return false;
+    //if the idx is 0, shift
+    //if the idx is equal to length - 1, pop
+    //use the get method to retrieve the item to be removed
+    //update the next and prev properties to remove the found node from the list
+    //set next and prev of found node to be null
+    //decrement the length
+    //return the removed node
+    if (idx < 0 || idx >= this.length) {
+      return false;
+    }
+    if (idx === 0) {
+      return this.shift();
+    }
+    if (idx === this.length - 1) {
+      return this.pop();
+    } else {
+      let removedNode = this.get(idx);
+      removedNode.prev.next = removedNode.next;
+      removedNode.next.prev = removedNode.prev;
+      removedNode.prev = null;
+      removedNode.next = null;
+      this.length--;
+      return removedNode;
+    }
+  }
 
   print() {}
 
@@ -218,6 +245,6 @@ list
 list.unshift("treagan");
 // console.log("got Node:", list.get(1));
 // console.log(list.set(10, "Treagan Birbal"));
-console.log(list.length);
-console.log(list.insert(1, "Treagan Birbal"));
-console.log(list.get(1).next);
+// console.log(list.remove(0));
+list.remove(3);
+console.log(list);
