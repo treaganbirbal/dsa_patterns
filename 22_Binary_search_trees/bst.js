@@ -37,6 +37,9 @@ class BinarySearchTree {
     } else {
       let currentNode = this.root;
       while (true) {
+        if (value === currentNode.value) {
+          return undefined;
+        }
         if (value < currentNode.value) {
           if (currentNode.left === null) {
             currentNode.left = newNode;
@@ -54,7 +57,40 @@ class BinarySearchTree {
         }
       }
     }
-    return this;
+  }
+  //Finding a Node in a BST
+  find(val) {
+    //start at the root,
+    //check if there is a root- if not - return
+    //if there is a root, check if the value of the new Node is the value we are looking for, if found we are done return node
+    //if not, check to see if the value is greater or less than the value of the root
+    //if value is greater
+    //check to see if there is a node to the right
+    //if there is move to the node and repeat these steps
+    //if there is not then we are done searching
+    //if value is less
+    //check to seee if there is a node to the left
+    //if there is move to the node and repeat these steps
+    //if there is not then we are done searching
+    if (!this.root) {
+      return false;
+    } else {
+      let current = this.root;
+      let found = false;
+      while (current && !found) {
+        if (val < current.value) {
+          current = current.left;
+        } else if (val > current.value) {
+          current = current.right;
+        } else {
+          found = true;
+        }
+      }
+      if (!found) {
+        return false;
+      }
+      return current;
+    }
   }
 }
 
@@ -64,4 +100,7 @@ bst.insert(10);
 bst.insert(5);
 bst.insert(15);
 bst.insert(12);
-console.log(bst.root.right);
+bst.insert(7);
+bst.insert(6);
+console.log(bst);
+console.log("FOUND: ", bst.find(7));
