@@ -114,7 +114,21 @@ class BinarySearchTree {
     return data;
   }
 
-  inOrder() {}
+  inOrder() {
+    const data = [];
+    let current = this.root;
+    function traverse(node) {
+      if (node.left) {
+        traverse(node.left);
+      }
+      data.push(node.value);
+      if (node.right) {
+        traverse(node.right);
+      }
+    }
+    traverse(current);
+    return data;
+  }
 
   postOrder() {
     //create an array to store the values of nodes visited
@@ -149,4 +163,5 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(20);
 // console.log(tree.preOrder());
-console.log(tree.postOrder());
+// console.log(tree.postOrder());
+console.log(tree.inOrder());
