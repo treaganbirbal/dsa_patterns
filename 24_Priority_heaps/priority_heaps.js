@@ -45,8 +45,10 @@ class MaxBinaryHeap {
     //Return the old root
     let maxVal = this.values[0];
     let lastElement = this.values.pop();
-    this.values[0] = lastElement;
-    this.sinkDown();
+    if (this.values.length > 0) {
+      this.values[0] = lastElement;
+      this.sinkDown();
+    }
     return maxVal;
   }
 
