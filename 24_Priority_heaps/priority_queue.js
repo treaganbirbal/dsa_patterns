@@ -86,6 +86,7 @@ class Node {
   constructor(value, priority) {
     this.value = value;
     this.priority = priority;
+    this.insertTime = Date.now();
   }
 }
 
