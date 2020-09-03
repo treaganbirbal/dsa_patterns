@@ -91,14 +91,41 @@ class HashTable {
     }
     for (let i = 0; i < arr.length; i++) {
       if (this.keyMap[idx][i][0] === key) {
-        return this.keyMap[idx][i];
+        return this.keyMap[idx][i][1];
       }
     }
     return undefined;
+  }
+
+  keys() {
+    //Loop through the hash table array and returns and array of keys in the table
+    const keyArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        keyArr.push(this._hash(this.keyMap[i][0]));
+      }
+    }
+    return keyArr;
+  }
+  values() {
+    //Loop through the hash table array and returns an array of values in the table
+    const valuesArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          if (!valuesArr.includes(this.keyMap[i][j][1])) {
+            valuesArr.push(this.keyMap[i][j][1]);
+          }
+        }
+      }
+    }
+    return valuesArr;
   }
 }
 
 const ht = new HashTable();
 console.log(ht.set("hello world", "goodbye!!"));
 console.log(ht.set("new York", "yerrr"));
-console.log(ht.get('dafafs'));
+console.log(ht.get("new York"));
+console.log(ht.keys());
+console.log(ht.values());
