@@ -84,10 +84,21 @@ class HashTable {
     //Send key through a hashing function
     //Retrieves the key-value pari in the hash table
     //If the key is not found, return undefined
+    const idx = this._hash(key);
+    let arr = this.keyMap[idx];
+    if (!this.keyMap[idx]) {
+      return undefined;
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (this.keyMap[idx][i][0] === key) {
+        return this.keyMap[idx][i];
+      }
+    }
+    return undefined;
   }
 }
 
 const ht = new HashTable();
 console.log(ht.set("hello world", "goodbye!!"));
-console.log(ht.set("hello world", "yerrr"));
-console.log(ht.keyMap[0]);
+console.log(ht.set("new York", "yerrr"));
+console.log(ht.get('dafafs'));
