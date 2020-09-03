@@ -43,3 +43,51 @@ function revisedHash(key, arrayLength) {
   }
   return total;
 }
+// console.log(revisedHash("pink", 13));
+// console.log(revisedHash("cyan", 13));
+
+//Dealing with Collisions
+//even with large array and a great has function, collisions are inevitable.
+//1. Seperate Chaining - With seperate chaining, at each index in array we store values using a more sophistacted data structure(e.g.  array or linked list). Allows us to store multiple key value pairs in same position.
+//2. Linear Probing - With linear probing, when we find a collision, we search through the array to find the next empty slot. This allows us to store one key-value pair at a position.
+
+class HashTable {
+  constructor(size = 4) {
+    this.keyMap = new Array(size);
+  }
+
+  _hash(key) {
+    let total = 0;
+    let WEIRD_PRIME = 31;
+    for (let i = 0; i < Math.min(key.length, 100); i++) {
+      let char = key[i];
+      let value = char.charCodeAt(0) - 96;
+      total = (total * WEIRD_PRIME + value) & this.keyMap.length;
+    }
+    return total;
+  }
+
+  set(key, val) {
+    //Accepts a key and a value
+    //Send key through a hashing function
+    //Store the key-value pair in the hash table arry via seperate chaining
+    const idx = this._hash(key);
+    if (!this.keyMap[idx]) {
+      this.keyMap[idx] = [];
+    }
+    this.keyMap[idx].push([key, val]);
+    return idx;
+  }
+
+  get(key) {
+    //Accepts a key
+    //Send key through a hashing function
+    //Retrieves the key-value pari in the hash table
+    //If the key is not found, return undefined
+  }
+}
+
+const ht = new HashTable();
+console.log(ht.set("hello world", "goodbye!!"));
+console.log(ht.set("hello world", "yerrr"));
+console.log(ht.keyMap[0]);
