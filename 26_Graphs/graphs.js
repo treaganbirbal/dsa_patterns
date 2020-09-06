@@ -35,10 +35,32 @@ class Graph {
   //It adds a key to the adjacency list with the name of the vertext and set it's value to be an empty array.
   //
   addVertex(vertex) {
-    this.adjacencyList[vertex] = [];
+    if (!this.adjacencyList[vertex]) {
+      this.adjacencyList[vertex] = [];
+    }
+  }
+
+  //method that adds edges, which accepts two vertices
+  //find in the adjacency list the key of vertex1 and push in vertex2 to the array
+  //find in the adjacency list the key of vertex2 and push in vertex1 to the array
+  addEdge(vertex1, vertex2) {
+    this.adjacencyList[vertex1].push(vertex2);
+    this.adjacencyList[vertex2].push(vertex1);
   }
 }
 
 const g = new Graph();
-g.addVertex("Treagan");
+g.addVertex("Tokyo");
+g.addVertex("Hawaii");
+g.addVertex("San Francisco");
+g.addVertex("Colorado");
+g.addVertex("Chicago");
+g.addVertex("New York");
+g.addVertex("Miami");
+g.addEdge("Tokyo", "Hawaii");
+g.addEdge("Hawaii", "San Francisco");
+g.addEdge("San Francisco", "Colorado");
+g.addEdge("Colorado", "Chicago");
+g.addEdge("Chicago", "New York");
+g.addEdge("New York", "Miami");
 console.log(g);
