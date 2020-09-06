@@ -47,6 +47,20 @@ class Graph {
     this.adjacencyList[vertex1].push(vertex2);
     this.adjacencyList[vertex2].push(vertex1);
   }
+
+  //method that removes edges, which accepts two vertices
+  //reassign the key of vertex1 to be an array that does not contain vertex 2
+  //reassign the key of vertex2 to be an array that does not contain vertex 1
+  removingEdge(vertex1, vertex2) {
+    this.adjacencyList[vertex1].splice(
+      this.adjacencyList[vertex1].indexOf(vertex2),
+      1
+    );
+    this.adjacencyList[vertex2].splice(
+      this.adjacencyList[vertex2].indexOf(vertex1),
+      1
+    );
+  }
 }
 
 const g = new Graph();
@@ -63,4 +77,7 @@ g.addEdge("San Francisco", "Colorado");
 g.addEdge("Colorado", "Chicago");
 g.addEdge("Chicago", "New York");
 g.addEdge("New York", "Miami");
-console.log(g);
+console.log("OLD GRAPH", g);
+g.removingEdge("Tokyo", "Hawaii");
+g.removingEdge("New York", "Chicago");
+console.log("NEW GRAPH", g);
