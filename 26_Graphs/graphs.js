@@ -52,14 +52,24 @@ class Graph {
   //reassign the key of vertex1 to be an array that does not contain vertex 2
   //reassign the key of vertex2 to be an array that does not contain vertex 1
   removingEdge(vertex1, vertex2) {
-    this.adjacencyList[vertex1].splice(
-      this.adjacencyList[vertex1].indexOf(vertex2),
-      1
+    this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
+      (v) => v !== vertex2
     );
-    this.adjacencyList[vertex2].splice(
-      this.adjacencyList[vertex2].indexOf(vertex1),
-      1
+    this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
+      (v) => v !== vertex1
     );
+  }
+
+  //method that removes a vertex/node, which accepts a single vertex argument
+  //loop as long as there are any other vertices in the adjacency list for that vertex
+  //use removingEdge method with the vertex we are removing and any values in the adjacency list for that vertex
+  //delete key in adjacency list
+  removingVertex(vertex) {
+    while (this.adjacencyList[vertex].length) {
+      let adjVertex = this.adjacencyList[vertex].pop();
+      this.removingEdge(vertex, adjVertex);
+    }
+    delete this.adjacencyList[vertex];
   }
 }
 
@@ -78,6 +88,8 @@ g.addEdge("Colorado", "Chicago");
 g.addEdge("Chicago", "New York");
 g.addEdge("New York", "Miami");
 console.log("OLD GRAPH", g);
-g.removingEdge("Tokyo", "Hawaii");
-g.removingEdge("New York", "Chicago");
-console.log("NEW GRAPH", g);
+// g.removingEdge("Tokyo", "Hawaii");
+// g.removingEdge("New York", "Miami");
+// console.log("NEW GRAPH", g);
+g.removingVertex("New York");
+console.log(g);
